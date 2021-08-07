@@ -1,0 +1,28 @@
+How to use 'Water Utils'
+
+***First of all, you must import Standard assets/Water.***
+1.Select Assets > Import Package > Environment.
+2.UnCheck StandardAsset (uncheck all assets).
+3.Check Standard Assets/Environment/Water and import.
+
+How to add waterline
+1.Select a GameObject on water.
+2.In inspector, select MeshRenderer/Materials/Size and set '2'.
+3.Drag Materials/WaterLineSimple and drop into Element1.
+
+How to Set Objects on WaterPro(vertex move shader)
+1.Create EmptyObject and Add scripts/WaterHeight on it.
+2.Drag Water4Advanced/Tile and Drop to WaterHeight/TargetMr(MeshRenderer).
+3.Drag a target GameObject that you want to set on waterPro4 to 1.
+
+How to adjust Skybox horizon
+1.Select Window > Lighting and Select Scene Tab.
+2.Doubleclick Skybox material and show info in inspector.
+3.Change shader from Skybx/Cubemap to Skybox/CubemapHorizonOfs.
+4.Change Height Offset in inspector.
+
+How to fade 2 Skyboxes
+1.Select Window > Lighting and Select Scene Tab.
+2.Doubleclick Skybox material and show info in inspector.
+3.Change shader from Skybx/Cubemap to Skybox/CubemapHorizonOfsFade.
+4.Change Height Offset in inspector.

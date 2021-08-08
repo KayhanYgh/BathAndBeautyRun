@@ -793,7 +793,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 7991
+    m_Bits: 311
 --- !u!1 &2217351922412028282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,7 +1662,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 7991
+    m_Bits: 311
 --- !u!1 &4275155653651465194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,7 +2747,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 823
+    m_Bits: 311
 --- !u!1 &5880378713166920760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,7 +2852,6 @@ GameObject:
   m_Component:
   - component: {fileID: 996387727677248367}
   - component: {fileID: 3537990306747580419}
-  - component: {fileID: 127934101205486669}
   m_Layer: 0
   m_Name: '@ScoreManager'
   m_TagString: Untagged
@@ -2897,8 +2896,6 @@ MonoBehaviour:
   Finished: 0
   Won: 0
   Lost: 0
-  player: {fileID: 0}
-  npcs: []
   showTutorial: 0
   progressMenu: {fileID: 1445701477147986323}
   playerTouch: {fileID: 2833317410611111703}
@@ -2967,44 +2964,6 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   slowMotionOnWin: 0
---- !u!114 &127934101205486669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6179321859149661433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09f6c8c5e05597b468c4940fbe09de2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  first_flagImage: {fileID: 150935113693606596}
-  first_nameText: {fileID: 2257031482455538048}
-  second_flagImage: {fileID: 1597090721505206900}
-  second_nameText: {fileID: 8508452557176470596}
-  player:
-    flag: {fileID: 8435872213211792933, guid: 66135d26dfa95bb429f2c2c656c02fce, type: 3}
-    name: PLAYER
-  opponent:
-    flag: {fileID: 0}
-    name: 
-  flags:
-  - {fileID: 8435872213211792933, guid: 66135d26dfa95bb429f2c2c656c02fce, type: 3}
-  - {fileID: -8990790361917812016, guid: 66135d26dfa95bb429f2c2c656c02fce, type: 3}
-  - {fileID: 4684754671391661781, guid: 66135d26dfa95bb429f2c2c656c02fce, type: 3}
-  - {fileID: -1474419655512972918, guid: 66135d26dfa95bb429f2c2c656c02fce, type: 3}
-  - {fileID: -961137715399350672, guid: 66135d26dfa95bb429f2c2c656c02fce, type: 3}
-  - {fileID: -7813613536256787874, guid: 66135d26dfa95bb429f2c2c656c02fce, type: 3}
-  - {fileID: 7989339914962613438, guid: 66135d26dfa95bb429f2c2c656c02fce, type: 3}
-  - {fileID: 5859817080658204292, guid: 66135d26dfa95bb429f2c2c656c02fce, type: 3}
-  - {fileID: -7202426241779024023, guid: 66135d26dfa95bb429f2c2c656c02fce, type: 3}
-  names:
-  - Bethel
-  - 'Sheryll '
-  - Yuonne
-  - 'Ryan '
-  - Aiko
 --- !u!1 &6181110357844028640
 GameObject:
   m_ObjectHideFlags: 0

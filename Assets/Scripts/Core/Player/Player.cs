@@ -1,9 +1,17 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.UI;
 
 [SelectionBase]
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
+
+    private void OnEnable()
+    {
+        Instance = this;
+    }
+
     [TabGroup("Setting")] public float movementSpeed = 6;
     [TabGroup("Setting")] public float touchSensitivity = 0.6f;
     [TabGroup("Setting")] private Touch _touch;
@@ -14,6 +22,9 @@ public class Player : MonoBehaviour
 
     [TabGroup("Camera")] public Transform cameraTransform;
     [TabGroup("Camera")] public int slowerCameraThanPlayer;
+
+    [TabGroup("Dirty level")] public int dirtyLevel;
+    [TabGroup("Dirty level")] public Slider dirtyLevelSlider;
 
 
     private static readonly int CharacterRotation = Animator.StringToHash("Rotation");
@@ -30,6 +41,9 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!Score.ScoreManager.Instance.isStarted) return;
+
+
         SensorManager();
         Movement();
         CurveManager();
@@ -170,6 +184,7 @@ public class Player : MonoBehaviour
 
     [TabGroup("Curve way")] public float curveRotationSpeed;
     [TabGroup("Curve way")] public float yRotation;
+
 
 
     private void CurveManager()

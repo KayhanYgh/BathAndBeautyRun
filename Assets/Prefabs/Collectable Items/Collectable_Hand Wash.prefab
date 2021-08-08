@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2747707344278534624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6911558180960555275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01fd4090601e3484e8ed9b8716283dd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 2007605315596362161}
 --- !u!1 &2747707345300632104
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e108e6b466447854db595fb1bd2cc900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelEffect: 1
+  levelEffect: 5
   onCollect:
     m_PersistentCalls:
       m_Calls:
@@ -121,6 +108,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &2747707344278534624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6911558180960555275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01fd4090601e3484e8ed9b8716283dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 2007605315596362161}
 --- !u!1001 &2747707344278534620
 PrefabInstance:
   m_ObjectHideFlags: 0

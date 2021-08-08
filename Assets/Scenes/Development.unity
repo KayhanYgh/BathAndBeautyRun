@@ -243,12 +243,6 @@ Transform:
   m_Father: {fileID: 1820166534}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50.000004, y: 33.059002, z: 0}
---- !u!20 &289187582 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 3397701786612052031, guid: c895f781c711cf145af36daadeab530a,
-    type: 3}
-  m_PrefabInstance: {fileID: 3397701786339135298}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &351647768
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +430,7 @@ MonoBehaviour:
   - Advanced
   enableShadows: 1
   shadowCaster: {fileID: 0}
-  currentCam: {fileID: 289187582}
+  currentCam: {fileID: 0}
   material: {fileID: 2100000, guid: f6317624d362488489be67462f09d002, type: 2}
   isMobileAdvanced: 1
   isMobilePlatform: 1

@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 6586240211991681738}
   - component: {fileID: 6586240211991681737}
   m_Layer: 0
-  m_Name: Collectable_color_bucket
+  m_Name: Collectable_Color Bucket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e108e6b466447854db595fb1bd2cc900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelEffect: 1
+  levelEffect: -5
   onCollect:
     m_PersistentCalls:
       m_Calls:
@@ -199,7 +199,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: -1
+          m_IntArgument: -5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1

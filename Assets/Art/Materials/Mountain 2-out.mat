@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mountain 2-out
-  m_Shader: {fileID: 4800000, guid: 128c5f1edaefa4c4fb3f9f7a4615edb2, type: 3}
+  m_Shader: {fileID: 4800000, guid: d012d1e18b084480c9926d467532ef8c, type: 3}
   m_ShaderKeywords: _SEGMENTED_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -36,14 +36,18 @@ Material:
     - _MaxLight: 1
     - _MinLight: 0
     - _Offset: 1.1
-    - _OtlWidth: 1.63
-    - _RampSmooth: 1
-    - _RampThreshold: 0.23
+    - _OtlWidth: 0.98
+    - _RampSmooth: 0.611
+    - _RampThreshold: 0.339
+    - _RimMax: 0.963
+    - _RimMin: 0.419
     - _Segmented: 1
     - _ShnIntense: 0
     - _ShnOverlap: 0
     - _ShnRange: 0.15
     - _ShnSmooth: 0
+    - _Smoothness: 0.2
+    - _SpecSmooth: 0.397
     - _Steps: 6.1
     - _StpSmooth: 1
     - __dummy__: 0
@@ -51,5 +55,7 @@ Material:
     - _Color: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
     - _HColor: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 1}
     - _OtlColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0.6}
     - _SColor: {r: 0.55891776, g: 0.59347063, b: 0.754717, a: 1}
     - _ShnColor: {r: 1, g: 1, b: 0, a: 1}
+    - _SpecColor: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}

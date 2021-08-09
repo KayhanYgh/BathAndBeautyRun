@@ -1,5 +1,6 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 [SelectionBase]
@@ -25,6 +26,14 @@ public class Player : MonoBehaviour
 
     [TabGroup("Dirty level")] public int dirtyLevel;
     [TabGroup("Dirty level")] public Slider dirtyLevelSlider;
+
+    [TabGroup("Stages")] public Animator[] characterAnimators;
+    [TabGroup("Stages")] public GameObject stage0;
+    [TabGroup("Stages")] public GameObject stage1;
+    [TabGroup("Stages")] public GameObject stage2;
+    [TabGroup("Stages")] public GameObject stage3;
+    [TabGroup("Stages")] public GameObject stage4;
+    [TabGroup("Stages")] public UnityEvent onStageChanged;
 
 
     private static readonly int CharacterRotation = Animator.StringToHash("Rotation");
@@ -56,6 +65,9 @@ public class Player : MonoBehaviour
     /// </summary>
     private void Movement()
     {
+        if (!Score.ScoreManager.Instance.isStarted || Score.ScoreManager.Instance.Finished || Score.ScoreManager.Instance.Won || Score.ScoreManager.Instance.Lost) return;
+
+
         if (Input.touchCount > 0)
         {
             _touch = Input.GetTouch(0); // Getting touch
@@ -79,20 +91,59 @@ public class Player : MonoBehaviour
                 LocalRotationManager(false);
             }
 
-
-            transform.position += Time.deltaTime * transform.forward * movementSpeed;
-
-
+            PlayMotion(PlayerStatus.Move);
         }
-        else
-        {
-            touchMovementDeltaX = 0;
-        }
+
+        PlayMotion(PlayerStatus.Move);
+        transform.position += Time.deltaTime * transform.forward * movementSpeed;
+        //else
+        //{
+        //    touchMovementDeltaX = 0;
+        //    PlayMotion(PlayerStatus.Idle);
+        //}
 
         CameraManager();
     }
 
+    private int _stage;
+    private int _prevSatge = 0;
+    public void ManageStage()
+    {
+        if (dirtyLevel < 10)
+        {
+            _stage = 0;
 
+
+        }
+        else if (dirtyLevel >= 10 && dirtyLevel < 20)
+        {
+            _stage = 1;
+        }
+        else if (dirtyLevel >= 20 && dirtyLevel < 30)
+        {
+            _stage = 2;
+        }
+        else if (dirtyLevel >= 30 && dirtyLevel < 40)
+        {
+            _stage = 3;
+        }
+        else if (dirtyLevel >= 40 && dirtyLevel <= 50)
+        {
+            _stage = 4;
+        }
+
+        if (_prevSatge != _stage)
+        {
+            onStageChanged?.Invoke();
+            _prevSatge = _stage;
+        }
+
+        stage0.SetActive(_stage == 0);
+        stage1.SetActive(_stage == 1);
+        stage2.SetActive(_stage == 2);
+        stage3.SetActive(_stage == 3);
+        stage4.SetActive(_stage == 4);
+    }
 
     private void LocalRotationManager(bool moving)
     {
@@ -151,17 +202,28 @@ public class Player : MonoBehaviour
 
 
 
+    [TabGroup("Sensors")] private RaycastHit _hitGround;
     [TabGroup("Sensors")] private RaycastHit _hitLeft;
     [TabGroup("Sensors")] private RaycastHit _hitRight;
+    [TabGroup("Sensors")] private bool _isGrounded;
     [TabGroup("Sensors")] private bool _rightIsBlocked;
     [TabGroup("Sensors")] private bool _leftIsBlocked;
     [TabGroup("Sensors")] public LayerMask sensorLayerMask;
+    [TabGroup("Sensors")] public LayerMask groundSensorLayerMask;
     [TabGroup("Sensors")] public float range;
-
+    [TabGroup("Sensors")] public float groundSensorRange;
 
 
     private void SensorManager()
     {
+        // Left sensors
+        _isGrounded = Physics.Raycast(transform.position, -transform.up, out _hitGround, groundSensorRange, groundSensorLayerMask);
+
+        if (!_isGrounded)
+        {
+            PlayMotion(PlayerStatus.Falling);
+        }
+
         // Left sensors
         _leftIsBlocked = Physics.Raycast(transform.position, -transform.right, out _hitLeft, range, sensorLayerMask);
 
@@ -178,6 +240,9 @@ public class Player : MonoBehaviour
 
         Gizmos.color = _rightIsBlocked ? Color.red : Color.green;
         Gizmos.DrawRay(transform.position, transform.right * range);
+
+        Gizmos.color = _isGrounded ? Color.green : Color.red;
+        Gizmos.DrawRay(transform.position, -transform.up * groundSensorRange);
     }
 
 
@@ -193,5 +258,67 @@ public class Player : MonoBehaviour
         {
             transform.eulerAngles = Vector3.MoveTowards(transform.eulerAngles, new Vector3(0, yRotation, 0), Time.deltaTime * curveRotationSpeed);
         }
+    }
+
+
+    public static readonly int Status = Animator.StringToHash("Status");
+
+
+    public void PlayMotion(PlayerStatus status)
+    {
+        if (_isGrounded)
+        {
+            switch (status)
+            {
+                case PlayerStatus.Idle:
+                    foreach (var item in characterAnimators)
+                    {
+                        item.SetInteger(Status, 0);
+                    }
+                    break;
+                case PlayerStatus.Move:
+                    foreach (var item in characterAnimators)
+                    {
+                        item.SetInteger(Status, 1);
+                    }
+                    break;
+                case PlayerStatus.Falling:
+                    foreach (var item in characterAnimators)
+                    {
+                        item.SetInteger(Status, 2);
+                    }
+                    break;
+                case PlayerStatus.Dance:
+                    foreach (var item in characterAnimators)
+                    {
+                        item.SetInteger(Status, 3);
+                    }
+                    break;
+                case PlayerStatus.Sad:
+                    foreach (var item in characterAnimators)
+                    {
+                        item.SetInteger(Status, 4);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            foreach (var item in characterAnimators)
+            {
+                item.SetInteger(Status, 2);
+            }
+        }
+    }
+
+    public enum PlayerStatus
+    {
+        Idle,
+        Move,
+        Falling,
+        Dance,
+        Sad
     }
 }

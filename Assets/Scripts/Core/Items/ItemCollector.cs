@@ -7,6 +7,7 @@ public class ItemCollector : MonoBehaviour
         if(other.GetComponent<CollectableItems>())
         {
             other.GetComponent<CollectableItems>().Collect();
+            Player.Instance.ManageStage();
         }
     }
 }

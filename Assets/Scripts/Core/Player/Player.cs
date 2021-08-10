@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     [TabGroup("Stages")] public GameObject stage3;
     [TabGroup("Stages")] public GameObject stage4;
     [TabGroup("Stages")] public UnityEvent onStageChanged;
+    [TabGroup("Stages")] public UnityEvent onStageDecreased;
 
 
     private static readonly int CharacterRotation = Animator.StringToHash("Rotation");
@@ -50,6 +51,18 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(Score.ScoreManager.Instance.Won)
+        {
+            PlayMotion(PlayerStatus.Dance);
+            return;
+        }
+
+        if (Score.ScoreManager.Instance.Lost)
+        {
+            PlayMotion(PlayerStatus.Sad);
+            return;
+        }
+
         if (!Score.ScoreManager.Instance.isStarted) return;
 
 
@@ -106,7 +119,7 @@ public class Player : MonoBehaviour
     }
 
     private int _stage;
-    private int _prevSatge = 0;
+    private int _prevStage = 0;
     public void ManageStage()
     {
         if (dirtyLevel < 10)
@@ -132,10 +145,14 @@ public class Player : MonoBehaviour
             _stage = 4;
         }
 
-        if (_prevSatge != _stage)
+        if (_prevStage < _stage)
         {
             onStageChanged?.Invoke();
-            _prevSatge = _stage;
+        }
+        else
+        {
+            _prevStage = _stage;
+            onStageDecreased?.Invoke();
         }
 
         stage0.SetActive(_stage == 0);

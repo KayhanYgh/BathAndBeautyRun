@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e108e6b466447854db595fb1bd2cc900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelEffect: 5
+  levelEffect: 2
   onCollect:
     m_PersistentCalls:
       m_Calls:

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
+[SelectionBase]
 public class CollectableItems : MonoBehaviour
 {
     public int levelEffect;

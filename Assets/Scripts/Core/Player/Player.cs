@@ -47,11 +47,17 @@ public class Player : MonoBehaviour
         yRotation = transform.eulerAngles.y;
     }
 
-
+    private void Update()
+    {
+        if(dirtyLevel <= 0)
+        {
+            Score.ScoreManager.Instance.Lose("");
+        }
+    }
 
     private void FixedUpdate()
     {
-        if(Score.ScoreManager.Instance.Won)
+        if (Score.ScoreManager.Instance.Won)
         {
             PlayMotion(PlayerStatus.Dance);
             return;
@@ -125,8 +131,6 @@ public class Player : MonoBehaviour
         if (dirtyLevel < 10)
         {
             _stage = 0;
-
-
         }
         else if (dirtyLevel >= 10 && dirtyLevel < 20)
         {
@@ -145,14 +149,18 @@ public class Player : MonoBehaviour
             _stage = 4;
         }
 
-        if (_prevStage < _stage)
+        if (_prevStage != _stage)
         {
-            onStageChanged?.Invoke();
-        }
-        else
-        {
-            _prevStage = _stage;
-            onStageDecreased?.Invoke();
+            if (_prevStage < _stage)
+            {
+                onStageChanged?.Invoke();
+                _prevStage = _stage;
+            }
+            else if (_prevStage > _stage)
+            {
+                _prevStage = _stage;
+                onStageDecreased?.Invoke();
+            }
         }
 
         stage0.SetActive(_stage == 0);

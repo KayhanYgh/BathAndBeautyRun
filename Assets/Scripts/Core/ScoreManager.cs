@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using Sirenix.OdinInspector;
+﻿using Sirenix.OdinInspector;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -104,6 +104,7 @@ namespace Score
             Debug.Log(reason);
             winMenu.SetActive(true);
 
+            BonusManager.Instance.startCalculation = true;
 
             onWin?.Invoke();
 

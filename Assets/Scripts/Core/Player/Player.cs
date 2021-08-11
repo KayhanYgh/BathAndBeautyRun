@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
         Instance = this;
     }
 
+    public bool stop;
     [TabGroup("Setting")] public float movementSpeed = 6;
     [TabGroup("Setting")] public float touchSensitivity = 0.6f;
     [TabGroup("Setting")] private Touch _touch;
@@ -49,7 +50,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if(dirtyLevel <= 0)
+        if (dirtyLevel <= 0)
         {
             Score.ScoreManager.Instance.Lose("");
         }
@@ -84,6 +85,8 @@ public class Player : MonoBehaviour
     /// </summary>
     private void Movement()
     {
+        if (stop) return;
+
         if (!Score.ScoreManager.Instance.isStarted || Score.ScoreManager.Instance.Finished || Score.ScoreManager.Instance.Won || Score.ScoreManager.Instance.Lost) return;
 
 
@@ -160,6 +163,7 @@ public class Player : MonoBehaviour
             {
                 _prevStage = _stage;
                 onStageDecreased?.Invoke();
+                stop = false;
             }
         }
 
@@ -168,6 +172,7 @@ public class Player : MonoBehaviour
         stage2.SetActive(_stage == 2);
         stage3.SetActive(_stage == 3);
         stage4.SetActive(_stage == 4);
+
     }
 
     private void LocalRotationManager(bool moving)

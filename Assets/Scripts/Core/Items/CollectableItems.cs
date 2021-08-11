@@ -13,10 +13,17 @@ public class CollectableItems : MonoBehaviour
 
         if (levelEffect > 0)
         {
-            Score.ScoreManager.Instance.scoreText.text = (int.Parse(Score.ScoreManager.Instance.scoreText.text)+ levelEffect).ToString();
+            Score.ScoreManager.Instance.scoreText.text = (int.Parse(Score.ScoreManager.Instance.scoreText.text) + levelEffect).ToString();
+        }
+        else
+        {
+            Player.Instance.stop = true;
+            foreach (var item in Player.Instance.characterAnimators)
+            {
+                item.SetBool("TakingDamage", true);
+            }
         }
 
-        Debug.Log($"Dirt level {levelEffect}");
         Player.Instance.dirtyLevel += levelEffect;
         Player.Instance.dirtyLevelSlider.value = Player.Instance.dirtyLevel;
 

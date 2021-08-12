@@ -14,12 +14,12 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.3537736, g: 0.9299596, b: 1, a: 1}
-  m_FogMode: 3
-  m_FogDensity: 0.03
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_FogMode: 1
+  m_FogDensity: 0.006
+  m_LinearFogStart: 60
+  m_LinearFogEnd: 180
   m_AmbientSkyColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6082061, g: 0.918095, b: 0.9750938, a: 1}
+  m_IndirectSpecularColor: {r: 0.6104081, g: 0.9199603, b: 0.9745707, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -883,9 +883,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shaderNames:
-  - Desktop
   - Mobile
-  shaderIndex: 1
+  shaderIndex: 0
   shader: {fileID: 4800000, guid: 644d4419f6d30214892dd65158332ba7, type: 3}
   renderQueue: 3000
   enableVertexColors: 1
@@ -1042,7 +1041,7 @@ MonoBehaviour:
   currentCam: {fileID: 0}
   material: {fileID: 2100000, guid: f6317624d362488489be67462f09d002, type: 2}
   isMobileAdvanced: 1
-  isMobilePlatform: 0
+  isMobilePlatform: 1
   shaderName: StylizedWater/Mobile
   isWaterLayer: 1
   hasShaderParams: 1
@@ -9458,16 +9457,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4375571814334529319, guid: 5017c1a9625ac674da2dd863a7b86a1e,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.55012
-      objectReference: {fileID: 0}
-    - target: {fileID: 4375571814334529319, guid: 5017c1a9625ac674da2dd863a7b86a1e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 16.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 4375571814334529319, guid: 5017c1a9625ac674da2dd863a7b86a1e,
-        type: 3}
       propertyPath: m_LocalScale.x
       value: 4.557882
       objectReference: {fileID: 0}
@@ -9480,6 +9469,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 4.557882
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375571814334529319, guid: 5017c1a9625ac674da2dd863a7b86a1e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.55012
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375571814334529319, guid: 5017c1a9625ac674da2dd863a7b86a1e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.76
       objectReference: {fileID: 0}
     - target: {fileID: 4375571814334529319, guid: 5017c1a9625ac674da2dd863a7b86a1e,
         type: 3}
@@ -10341,7 +10340,7 @@ PrefabInstance:
     - target: {fileID: 6026142745616448608, guid: 60e047adeb35bcf468cc53fb6acb021d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 62.22
+      value: 63.85
       objectReference: {fileID: 0}
     - target: {fileID: 6026142745616448608, guid: 60e047adeb35bcf468cc53fb6acb021d,
         type: 3}
@@ -10402,18 +10401,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1074353031, guid: c895f781c711cf145af36daadeab530a, type: 3}
-      propertyPath: sharedInstanceID
-      value: 219ef5a7-3513-4401-b171-f038ffbee978
-      objectReference: {fileID: 0}
     - target: {fileID: 1211083689, guid: c895f781c711cf145af36daadeab530a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3397701784810836099, guid: c895f781c711cf145af36daadeab530a,
-        type: 3}
-      propertyPath: touchSensitivity
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3397701785918333160, guid: c895f781c711cf145af36daadeab530a,
         type: 3}
@@ -10474,16 +10464,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3397701786612052028, guid: c895f781c711cf145af36daadeab530a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3397701786612052028, guid: c895f781c711cf145af36daadeab530a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -15.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c895f781c711cf145af36daadeab530a, type: 3}
@@ -10563,6 +10543,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: trashroom_b1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439273485972801836, guid: ff6f7fb496e479741ba47f4951699eef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff6f7fb496e479741ba47f4951699eef, type: 3}

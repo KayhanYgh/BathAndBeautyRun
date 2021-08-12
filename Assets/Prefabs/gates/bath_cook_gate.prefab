@@ -118,7 +118,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  isGate: 1
+      - m_Target: {fileID: 5071741421458870071}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5071741421387622971}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5378168915617329691
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +308,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  isGate: 1
+      - m_Target: {fileID: 5071741421458870071}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5071741421387622971}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5812736146402062393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,12 +700,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2417845816225429685}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &6361036762687115366 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8776135573630707923, guid: 83f8d4254c7b5b347ac5a30a243d44e6,
-    type: 3}
-  m_PrefabInstance: {fileID: 2417845816225429685}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2049220113352974552 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4466905764853356653, guid: 83f8d4254c7b5b347ac5a30a243d44e6,
@@ -676,6 +712,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &6361036762687115366 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8776135573630707923, guid: 83f8d4254c7b5b347ac5a30a243d44e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2417845816225429685}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3401555995049561706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1103,6 +1145,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824eddb4ccdd35f4b8ed8a7af19d550c, type: 3}
+--- !u!1 &5071741421387622971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 824eddb4ccdd35f4b8ed8a7af19d550c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5378168916239226730}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5560152644573589633 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 824eddb4ccdd35f4b8ed8a7af19d550c,
@@ -1198,6 +1246,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824eddb4ccdd35f4b8ed8a7af19d550c, type: 3}
+--- !u!1 &5071741421458870071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 824eddb4ccdd35f4b8ed8a7af19d550c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5378168916444836454}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5560152644359591309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 824eddb4ccdd35f4b8ed8a7af19d550c,

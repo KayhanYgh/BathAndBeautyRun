@@ -29,11 +29,11 @@ public class Player : MonoBehaviour
     [TabGroup("Dirty level")] public Slider dirtyLevelSlider;
 
     [TabGroup("Stages")] public Animator[] characterAnimators;
-    [TabGroup("Stages")] public GameObject stage0;
-    [TabGroup("Stages")] public GameObject stage1;
-    [TabGroup("Stages")] public GameObject stage2;
-    [TabGroup("Stages")] public GameObject stage3;
-    [TabGroup("Stages")] public GameObject stage4;
+    [TabGroup("Stages")] public GameObject[] stage0;
+    [TabGroup("Stages")] public GameObject[] stage1;
+    [TabGroup("Stages")] public GameObject[] stage2;
+    [TabGroup("Stages")] public GameObject[] stage3;
+    [TabGroup("Stages")] public GameObject[] stage4;
     [TabGroup("Stages")] public UnityEvent onStageChanged;
     [TabGroup("Stages")] public UnityEvent onStageDecreased;
 
@@ -167,12 +167,26 @@ public class Player : MonoBehaviour
             }
         }
 
-        stage0.SetActive(_stage == 0);
-        stage1.SetActive(_stage == 1);
-        stage2.SetActive(_stage == 2);
-        stage3.SetActive(_stage == 3);
-        stage4.SetActive(_stage == 4);
-
+        foreach (var item in stage0)
+        {
+            item.SetActive(_stage == 0);
+        }
+        foreach (var item in stage1)
+        {
+            item.SetActive(_stage == 1);
+        }
+        foreach (var item in stage2)
+        {
+            item.SetActive(_stage == 2);
+        }
+        foreach (var item in stage3)
+        {
+            item.SetActive(_stage == 3);
+        }
+        foreach (var item in stage4)
+        {
+            item.SetActive(_stage == 4);
+        }
     }
 
     private void LocalRotationManager(bool moving)

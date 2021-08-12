@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
                 if (touchMovementDeltaX > 0 && _rightIsBlocked || touchMovementDeltaX < 0 && _leftIsBlocked)
                 {
                     touchMovementDeltaX = 0;
-                }
+                } 
 
                 transform.position += transform.right * touchSensitivity * touchMovementDeltaX * Time.deltaTime;
 
@@ -131,23 +131,23 @@ public class Player : MonoBehaviour
     private int _prevStage = 0;
     public void ManageStage()
     {
-        if (dirtyLevel < 10)
+        if (dirtyLevel < 15)
         {
             _stage = 0;
         }
-        else if (dirtyLevel >= 10 && dirtyLevel < 20)
+        else if (dirtyLevel >= 15 && dirtyLevel < 30)
         {
             _stage = 1;
         }
-        else if (dirtyLevel >= 20 && dirtyLevel < 30)
+        else if (dirtyLevel >= 30 && dirtyLevel < 40)
         {
             _stage = 2;
         }
-        else if (dirtyLevel >= 30 && dirtyLevel < 40)
+        else if (dirtyLevel >= 40 && dirtyLevel < 45)
         {
             _stage = 3;
         }
-        else if (dirtyLevel >= 40 && dirtyLevel <= 50)
+        else if (dirtyLevel >= 45 && dirtyLevel <= 50)
         {
             _stage = 4;
         }

@@ -34,6 +34,12 @@ public class Player : MonoBehaviour
     [TabGroup("Stages")] public GameObject[] stage2;
     [TabGroup("Stages")] public GameObject[] stage3;
     [TabGroup("Stages")] public GameObject[] stage4;
+    [TabGroup("Stages")] public Image sliderFill;
+    [TabGroup("Stages")] public Sprite sliderFill0;
+    [TabGroup("Stages")] public Sprite sliderFill1;
+    [TabGroup("Stages")] public Sprite sliderFill2;
+    [TabGroup("Stages")] public Sprite sliderFill3;
+    [TabGroup("Stages")] public Sprite sliderFill4;
     [TabGroup("Stages")] public UnityEvent onStageChanged;
     [TabGroup("Stages")] public UnityEvent onStageDecreased;
 
@@ -118,11 +124,6 @@ public class Player : MonoBehaviour
 
         PlayMotion(PlayerStatus.Move);
         transform.position += Time.deltaTime * transform.forward * movementSpeed;
-        //else
-        //{
-        //    touchMovementDeltaX = 0;
-        //    PlayMotion(PlayerStatus.Idle);
-        //}
 
         CameraManager();
     }
@@ -189,6 +190,27 @@ public class Player : MonoBehaviour
         foreach (var item in stage4)
         {
             item.SetActive(_stage == 4);
+        }
+
+        if (_stage == 0)
+        {
+            sliderFill.sprite = sliderFill0;
+        }
+        else if (_stage == 1)
+        {
+            sliderFill.sprite = sliderFill1;
+        }
+        else if (_stage == 2)
+        {
+            sliderFill.sprite = sliderFill2;
+        }
+        else if (_stage == 3)
+        {
+            sliderFill.sprite = sliderFill3;
+        }
+        else if (_stage == 4)
+        {
+            sliderFill.sprite = sliderFill4;
         }
     }
 

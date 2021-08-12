@@ -6,6 +6,7 @@ public class CreativeMenu : MonoBehaviour
 {
     public SkyClass[] skies;
     public InputField inputField;
+    public GameObject[] uis;
 
     public void ChangeGroundMaterial(string id)
     {
@@ -37,6 +38,22 @@ public class CreativeMenu : MonoBehaviour
         {
 
             //  ignore
+        }
+    }
+    public Toggle hideUiToggle;
+
+    public void HideUi()
+    {
+        foreach (var item in uis)
+        {
+            if (hideUiToggle.isOn)
+            {
+                item.SetActive(false);
+            }
+            else
+            {
+                item.SetActive(true);
+            }
         }
     }
 

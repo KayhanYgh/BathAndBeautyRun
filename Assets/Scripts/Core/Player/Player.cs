@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
                 if (touchMovementDeltaX > 0 && _rightIsBlocked || touchMovementDeltaX < 0 && _leftIsBlocked)
                 {
                     touchMovementDeltaX = 0;
-                } 
+                }
 
                 transform.position += transform.right * touchSensitivity * touchMovementDeltaX * Time.deltaTime;
 
@@ -131,6 +131,9 @@ public class Player : MonoBehaviour
     private int _prevStage = 0;
     public void ManageStage()
     {
+        if (dirtyLevel > 50) dirtyLevel = 50;
+        if (dirtyLevel < 0) dirtyLevel = 0;
+
         if (dirtyLevel < 15)
         {
             _stage = 0;
